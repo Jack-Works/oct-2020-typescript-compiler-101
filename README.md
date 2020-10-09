@@ -2,7 +2,7 @@
 
 > 🚧 This Repo is still work in progress! Don't fork it or "use this template", otherwise you need to follow the upstream (here) change manually.
 
-Hello! Welcome to the COSCon 2020 Workshop, _TypeScript Compiler 101_ 🎉. In this Workshop, you'll learn how to use TypeScript Compiler API and how to write a transformer.
+Hello! Welcome to the [COSCon 2020][1] Workshop, _**TypeScript Compiler 101**_ 🎉. In this Workshop, you'll learn how to use [TypeScript][2] Compiler API and how to write a transformer.
 
 ⚠️ This is not a introduction to TypeScript. You must know how to code in TypeScript before the workshop.
 
@@ -20,5 +20,8 @@ Note: If you don't know the difference between `Statement` and `Expression`, thi
 
 ## Useful resources
 
--   [TypeScript API viewer](https://ts-ast-viewer.com/)
--   [TTypescript](https://github.com/cevek/ttypescript), over TypeScript tool to use custom transformers in the tsconfig.json
+-   [TypeScript AST viewer](https://ts-ast-viewer.com/)
+-   [TTypescript](https://github.com/cevek/ttypescript), over TypeScript tool to use custom transformers in the `tsconfig.json`
+
+[1]: https://www.bagevent.com/event/6840909
+[2]: https://www.typescriptlang.org/
