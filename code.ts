@@ -1,11 +1,5 @@
 /** This is a template for TypeScript transformer */
-import {
-    Node,
-    SourceFile,
-    TransformerFactory,
-    visitEachChild,
-    VisitResult,
-} from 'typescript'
+import { Node, SourceFile, TransformerFactory, visitEachChild, VisitResult } from 'typescript'
 
 export default function (): TransformerFactory<SourceFile> {
     return (context) => {

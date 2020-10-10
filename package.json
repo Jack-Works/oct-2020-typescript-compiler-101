@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "Template repo",
     "devDependencies": {
-        "@types/chalk": "^2.2.0",
         "@types/node": "^14.11.7",
         "chalk": "^4.1.0",
         "prettydiff": "^101.2.6",
