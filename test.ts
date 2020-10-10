@@ -21,13 +21,15 @@ async function main() {
 
 async function runTest(path: string) {
     const cwd = join(__dirname, './tests/', path)
-    const transformer: () => TransformerFactory<SourceFile> = (await import(join(cwd, 'code.ts'))).default
+    const transformer: () => TransformerFactory<SourceFile> = (
+        await import(join(cwd, 'code-local.ts')).catch(() => import(join(cwd, 'code.ts')))
+    ).default
 
     const tests = new Set<string>()
 
     for (const file of await fs.readdir(cwd)) {
-        if (file === 'code.ts') continue
-        if (!file.endsWith('.ts')) continue
+        if (['code.ts', 'code-local.ts'].includes(file)) continue
+        if (!file.match(/\.tsx?$/)) continue
         tests.add(file.slice(0, -3))
     }
     for (const test of tests) {
