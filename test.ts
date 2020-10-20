@@ -34,7 +34,8 @@ async function runTest(path: string) {
     }
     for (const test of tests) {
         const target = join(cwd, test)
-        const result = ts.transpileModule(await fs.readFile(`${target}.ts`, 'utf-8'), {
+        const sourceFile = await fs.readFile(`${target}.ts`, 'utf-8')
+        const result = ts.transpileModule(sourceFile, {
             compilerOptions: {
                 target: ts.ScriptTarget.ESNext,
                 module: ts.ModuleKind.ESNext,
@@ -53,13 +54,21 @@ async function runTest(path: string) {
                 if (baseline !== result) {
                     diff.options.source = baseline
                     diff.options.diff = result
-                    console.warn(
-                        `Transformer test ${chalk.underline(path)} / ${chalk.underline(test)} failed
+                    const head = `Transformer test ${chalk.underline(path)} / ${chalk.underline(test)}`
+                    const skipped = `${head} ${chalk.yellow(
+                        'skipped'
+                    )} because it is marked as optional. Use ${chalk.yellow('-o')} to test it.`
+                    if (sourceFile.includes('// optional') && !process.argv.includes('-o')) {
+                        console.log(skipped)
+                    } else {
+                        console.warn(
+                            `${head} failed
 Use ${chalk.yellow('-w')} to update the baseline if it is expected
 Diff:
 `,
-                        diff()
-                    )
+                            diff()
+                        )
+                    }
                 }
             } catch {}
         }
