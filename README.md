@@ -16,7 +16,7 @@ Note: If you don't know the difference between `Statement` and `Expression`, thi
 
 3. Install dependencies.
 
-4. Pick an exercise in `./tests/`, code, and run `npm run test -t=test-name`
+4. Pick an exercise in `./tests/`, code, and run `npm run test -- -t=test-name` or `yarn test -t=test-name`
 
 ## Useful resources
 
