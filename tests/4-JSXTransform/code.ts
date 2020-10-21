@@ -2,8 +2,8 @@ import { Node, SourceFile, TransformerFactory, visitEachChild, VisitResult } fro
 
 export default function (): TransformerFactory<SourceFile> {
     return (context) => {
-        const { factory } = context
         return (sourceFile) => {
+            const { factory } = context
             function visit<T extends Node>(node: T): VisitResult<Node> {
                 return visitEachChild(node, visit, context)
             }

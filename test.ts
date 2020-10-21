@@ -30,11 +30,11 @@ async function runTest(path: string) {
     for (const file of await fs.readdir(cwd)) {
         if (['code.ts', 'code-local.ts'].includes(file)) continue
         if (!file.match(/\.tsx?$/)) continue
-        tests.add(file.slice(0, -3))
+        tests.add(file)
     }
     for (const test of tests) {
-        const target = join(cwd, test)
-        const sourceFile = await fs.readFile(`${target}.ts`, 'utf-8')
+        const target = join(cwd, test).replace(/\.tsx?$/, '')
+        const sourceFile = await fs.readFile(`${join(cwd, test)}`, 'utf-8')
         const result = ts.transpileModule(sourceFile, {
             compilerOptions: {
                 target: ts.ScriptTarget.ESNext,
