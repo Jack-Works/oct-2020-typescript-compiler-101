@@ -1,14 +1,15 @@
-const bool = jsx("a", {
+import { jsx as jsx_1 } from "react/jsx-runtime";
+const bool = jsx_1("a", {
     "open": true
 });
-const str = jsx("a", {
+const str = jsx_1("a", {
     "href": "nyaa"
 });
-const expr = jsx("a", {
+const expr = jsx_1("a", {
     "id": window
 });
-const spread = jsx("a", window);
-const all = (jsx("nyaa", {
+const spread = jsx_1("a", window);
+const all = (jsx_1("nyaa", {
     "closing": true,
     "href": "somewhere",
     "id": window,
@@ -17,4 +18,3 @@ const all = (jsx("nyaa", {
     ...navigator,
     "data-one-more-attribute": true
 }));
-export {};

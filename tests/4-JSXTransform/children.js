@@ -1,15 +1,15 @@
-const text = jsx("text", {
+import { jsx as jsx_1 } from "react/jsx-runtime";
+const text = jsx_1("text", {
     children: "Some text."
 });
-const otherJSX = (jsx("text", {
-    children: jsx("image", {})
+const otherJSX = (jsx_1("text", {
+    children: jsx_1("image", {})
 }));
-const expr = jsx("div", {
-    children: text ? jsx("a", {}) : null
+const expr = jsx_1("div", {
+    children: text ? jsx_1("a", {}) : null
 });
-const all = (jsx("div", {
-    children: ["Some text.", jsx("image", {
+const all = (jsx_1("div", {
+    children: ["Some text.", jsx_1("image", {
             children: "text."
         }), window]
 }));
-export {};
