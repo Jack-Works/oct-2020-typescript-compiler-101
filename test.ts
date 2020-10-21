@@ -15,6 +15,7 @@ async function main() {
     if (filter) filter = filter.slice(3)
     for (const folder of await fs.readdir(join(__dirname, './tests'))) {
         if (filter && !folder.toLowerCase().includes(filter)) continue
+        if (folder.includes('99-End')) continue
         await runTest(folder)
     }
 }

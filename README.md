@@ -1,7 +1,5 @@
 # COSCon 2020 Workshop 🔨: _TypeScript compiler 101_
 
-> 🚧 This Repo is still WIP! Don't fork it or "use this template", otherwise you need to follow the upstream (here) change manually.
-
 Hello! Welcome to the [COSCon 2020][1] Workshop, _**TypeScript Compiler 101**_ 🎉. In this Workshop, you'll learn how to use [TypeScript][2] Compiler API and how to write a transformer.
 
 ⚠️ This is not an introduction to TypeScript. You must know how to code in TypeScript before the workshop.
