@@ -1,5 +1,7 @@
 # COSCon 2020 Workshop 🔨: _TypeScript compiler 101_
 
+> The workshop has finished! You can view [the answer here](https://github.com/Jack-Works/oct-2020-typescript-compiler-101/pull/2).
+
 Hello! Welcome to the [COSCon 2020][1] Workshop, _**TypeScript Compiler 101**_ 🎉. In this Workshop, you'll learn how to use [TypeScript][2] Compiler API and how to write a transformer.
 
 ⚠️ This is not an introduction to TypeScript. You must know how to code in TypeScript before the workshop.
